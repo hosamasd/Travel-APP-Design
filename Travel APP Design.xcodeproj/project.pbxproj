@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E11C67A24F7BF7900C81BAF /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E11C67924F7BF7900C81BAF /* HomeVC.swift */; };
+		4E11C67E24F7C00900C81BAF /* BaseCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E11C67D24F7C00900C81BAF /* BaseCollectionVC.swift */; };
+		4E11C68024F7C06800C81BAF /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E11C67F24F7C06800C81BAF /* HomeHeaderView.swift */; };
+		4E11C68324F7C09F00C81BAF /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E11C68224F7C09F00C81BAF /* StoryCollectionViewCell.swift */; };
+		4E11C68624F7C21900C81BAF /* PinterestCustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E11C68524F7C21900C81BAF /* PinterestCustomLayout.swift */; };
+		4E11C68824F7C23C00C81BAF /* PostCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E11C68724F7C23C00C81BAF /* PostCardCollectionViewCell.swift */; };
+		4E11C68A24F7C2E300C81BAF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E11C68924F7C2E300C81BAF /* ProfileViewController.swift */; };
+		4E11C68C24F7C51600C81BAF /* PostPreviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E11C68B24F7C51600C81BAF /* PostPreviewCollectionViewCell.swift */; };
+		4E11C68E24F7C53D00C81BAF /* BaseCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E11C68D24F7C53D00C81BAF /* BaseCollectionCell.swift */; };
+		4E11C69124F7C5ED00C81BAF /* ProfileHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E11C69024F7C5ED00C81BAF /* ProfileHeaderCollectionReusableView.swift */; };
 		4E681DCE24F7B38200927081 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E681DCD24F7B38200927081 /* AppDelegate.swift */; };
 		4E681DD024F7B38200927081 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E681DCF24F7B38200927081 /* SceneDelegate.swift */; };
 		4E681DD224F7B38200927081 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E681DD124F7B38200927081 /* LoginVC.swift */; };
@@ -19,6 +29,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E11C67924F7BF7900C81BAF /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		4E11C67D24F7C00900C81BAF /* BaseCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionVC.swift; sourceTree = "<group>"; };
+		4E11C67F24F7C06800C81BAF /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		4E11C68224F7C09F00C81BAF /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		4E11C68524F7C21900C81BAF /* PinterestCustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestCustomLayout.swift; sourceTree = "<group>"; };
+		4E11C68724F7C23C00C81BAF /* PostCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		4E11C68924F7C2E300C81BAF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4E11C68B24F7C51600C81BAF /* PostPreviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPreviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		4E11C68D24F7C53D00C81BAF /* BaseCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionCell.swift; sourceTree = "<group>"; };
+		4E11C69024F7C5ED00C81BAF /* ProfileHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		4E681DCA24F7B38200927081 /* Travel APP Design.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel APP Design.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E681DCD24F7B38200927081 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E681DCF24F7B38200927081 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +63,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E11C68124F7C09900C81BAF /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				4E11C68D24F7C53D00C81BAF /* BaseCollectionCell.swift */,
+				4E11C68224F7C09F00C81BAF /* StoryCollectionViewCell.swift */,
+				4E11C68724F7C23C00C81BAF /* PostCardCollectionViewCell.swift */,
+				4E11C68F24F7C5DD00C81BAF /* profile */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		4E11C68424F7C21300C81BAF /* bases */ = {
+			isa = PBXGroup;
+			children = (
+				4E11C67D24F7C00900C81BAF /* BaseCollectionVC.swift */,
+				4E11C68524F7C21900C81BAF /* PinterestCustomLayout.swift */,
+			);
+			path = bases;
+			sourceTree = "<group>";
+		};
+		4E11C68F24F7C5DD00C81BAF /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				4E11C68B24F7C51600C81BAF /* PostPreviewCollectionViewCell.swift */,
+				4E11C69024F7C5ED00C81BAF /* ProfileHeaderCollectionReusableView.swift */,
+			);
+			path = profile;
+			sourceTree = "<group>";
+		};
 		4E681DC124F7B38200927081 = {
 			isa = PBXGroup;
 			children = (
@@ -78,7 +127,10 @@
 		4E681DE124F7B3B500927081 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				4E11C68424F7C21300C81BAF /* bases */,
 				4E681DD124F7B38200927081 /* LoginVC.swift */,
+				4E11C67924F7BF7900C81BAF /* HomeVC.swift */,
+				4E11C68924F7C2E300C81BAF /* ProfileViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -86,6 +138,8 @@
 		4E681DE224F7B3BD00927081 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				4E11C68124F7C09900C81BAF /* cell */,
+				4E11C67F24F7C06800C81BAF /* HomeHeaderView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -172,11 +226,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E681DE724F7B42300927081 /* UILabel.swift in Sources */,
+				4E11C68624F7C21900C81BAF /* PinterestCustomLayout.swift in Sources */,
+				4E11C67A24F7BF7900C81BAF /* HomeVC.swift in Sources */,
+				4E11C68324F7C09F00C81BAF /* StoryCollectionViewCell.swift in Sources */,
+				4E11C68A24F7C2E300C81BAF /* ProfileViewController.swift in Sources */,
 				4E681DE624F7B42300927081 /* ExtensionUivew.swift in Sources */,
 				4E681DD224F7B38200927081 /* LoginVC.swift in Sources */,
 				4E681DCE24F7B38200927081 /* AppDelegate.swift in Sources */,
+				4E11C69124F7C5ED00C81BAF /* ProfileHeaderCollectionReusableView.swift in Sources */,
 				4E681DE924F7B42F00927081 /* CustomColors.swift in Sources */,
+				4E11C68024F7C06800C81BAF /* HomeHeaderView.swift in Sources */,
+				4E11C68E24F7C53D00C81BAF /* BaseCollectionCell.swift in Sources */,
+				4E11C68C24F7C51600C81BAF /* PostPreviewCollectionViewCell.swift in Sources */,
 				4E681DD024F7B38200927081 /* SceneDelegate.swift in Sources */,
+				4E11C67E24F7C00900C81BAF /* BaseCollectionVC.swift in Sources */,
+				4E11C68824F7C23C00C81BAF /* PostCardCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
