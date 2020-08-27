@@ -16,13 +16,13 @@ protocol PostActions {
 class PostCardCollectionViewCell: BaseCollectionCell {
     
     var delegate:PostActions?
-      var data:Posts?{
-          didSet{
-              manageData()
-          }
-      }
+    var data:Posts?{
+        didSet{
+            manageData()
+        }
+    }
     
-lazy var profilePicture:UIImageView = {
+    lazy var profilePicture:UIImageView = {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
         img.contentMode = .scaleAspectFill
@@ -33,6 +33,8 @@ lazy var profilePicture:UIImageView = {
         tap.numberOfTapsRequired = 1
         img.addGestureRecognizer(tap)
         img.isUserInteractionEnabled = true
+        img.constrainWidth(constant: 40)
+        img.constrainHeight(constant: 40)
         return img
     }()
     
@@ -44,7 +46,7 @@ lazy var profilePicture:UIImageView = {
         return l
     }()
     
-    let postImage:UIImageView = {
+    lazy var postImage:UIImageView = {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
         img.backgroundColor = CustomColors.appGray
@@ -54,7 +56,7 @@ lazy var profilePicture:UIImageView = {
         return img
     }()
     
-    let stackView:UIStackView = {
+    lazy var stackView:UIStackView = {
         let sv = UIStackView()
         sv.translatesAutoresizingMaskIntoConstraints = false
         sv.distribution = .fillEqually
@@ -64,20 +66,22 @@ lazy var profilePicture:UIImageView = {
     
     //MARK:- Like View
     
-    let likeView:UIView = {
+    lazy var likeView:UIView = {
         let v = UIView()
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
     
-    let likeBtn:UIButton = {
+    lazy var likeBtn:UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setImage(UIImage(named: "like"), for: .normal)
+        btn.constrainWidth(constant: 25)
+        btn.constrainHeight(constant: 25)
         return btn
     }()
     
-    let likeLabel:UILabel = {
+    lazy var likeLabel:UILabel = {
         let l = UILabel()
         l.text = "1.2k"
         l.font = UIFont(name: CustomFont.productSansRegular, size: 14)
@@ -87,20 +91,22 @@ lazy var profilePicture:UIImageView = {
     
     //MARK:- Comment View
     
-    let commentView:UIView = {
+    lazy var commentView:UIView = {
         let v = UIView()
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
     
-    let commentBtn:UIButton = {
+    lazy var commentBtn:UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setImage(UIImage(named: "comment"), for: .normal)
+        btn.constrainWidth(constant: 25)
+        btn.constrainHeight(constant: 25)
         return btn
     }()
     
-    let commentLabel:UILabel = {
+    lazy var commentLabel:UILabel = {
         let l = UILabel()
         l.text = "43"
         l.font = UIFont(name: CustomFont.productSansRegular, size: 14)
@@ -110,79 +116,39 @@ lazy var profilePicture:UIImageView = {
     
     //MARK:- More View
     
-    let moreView:UIView = {
+    lazy var moreView:UIView = {
         let v = UIView()
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
     
-    let moreBtn:UIButton = {
+    lazy var moreBtn:UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setImage(UIImage(named: "moreBtn"), for: .normal)
+        btn.constrainWidth(constant: 25)
+        btn.constrainHeight(constant: 25)
         return btn
     }()
+    lazy var likeStack = getStackkks(vv: likeBtn, v: likeLabel)
+    lazy var commentStack = getStackkks(vv: commentBtn, v: commentLabel)
     
     override func setupViews() {
-    
-        addSubViews(views: profilePicture,userDetails,postImage,stackView)
+        let topSTack = getStack(views: profilePicture,userDetails,UIView(), spacing: 8, distribution: .fill, axis: .horizontal)
+        let bottomStack = getStack(views: likeStack,commentStack,UIView(),moreBtn, spacing: 8, distribution: .fill, axis: .horizontal)
         
-        stackView.addArrangedSubview(likeView)
-        likeView.addSubview(likeBtn)
-        likeView.addSubview(likeLabel)
-        stackView.addArrangedSubview(commentView)
-        commentView.addSubview(commentBtn)
-        commentView.addSubview(commentLabel)
-        stackView.addArrangedSubview(moreView)
-        moreView.addSubview(moreBtn)
-        setUpConstraints()
+        addSubViews(views: topSTack,postImage,bottomStack)
+        topSTack.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor,padding: .init(top: 15, left: 15, bottom: 0, right: 15))
+        postImage.anchor(top: topSTack.bottomAnchor, leading: leadingAnchor, bottom: bottomStack.topAnchor, trailing: trailingAnchor,padding: .init(top: 15, left: 15, bottom: 16, right: 15))
+        bottomStack.anchor(top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor,padding: .init(top: 15, left: 15, bottom: 0, right: 15))
+        
     }
     
-    func setUpConstraints(){
-        NSLayoutConstraint.activate([
-            profilePicture.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
-            profilePicture.topAnchor.constraint(equalTo: topAnchor, constant: 15),
-            profilePicture.widthAnchor.constraint(equalToConstant: 40),
-            profilePicture.heightAnchor.constraint(equalToConstant: 40),
-            
-            userDetails.leadingAnchor.constraint(equalTo: profilePicture.trailingAnchor, constant: 15),
-            userDetails.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
-            userDetails.topAnchor.constraint(equalTo: topAnchor, constant: 18),
-            
-            postImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
-            postImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
-            postImage.topAnchor.constraint(equalTo: profilePicture.bottomAnchor, constant: 15),
-            
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
-            stackView.heightAnchor.constraint(equalToConstant: 30),
-            stackView.topAnchor.constraint(equalTo: postImage.bottomAnchor, constant: 10),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15),
-            
-            likeBtn.leadingAnchor.constraint(equalTo: likeView.leadingAnchor),
-            likeBtn.widthAnchor.constraint(equalToConstant: 25),
-            likeBtn.heightAnchor.constraint(equalToConstant: 25),
-            likeBtn.centerYAnchor.constraint(equalTo: likeView.centerYAnchor),
-            
-            likeLabel.leadingAnchor.constraint(equalTo: likeBtn.trailingAnchor,constant: 3),
-            likeLabel.trailingAnchor.constraint(equalTo: likeView.trailingAnchor, constant: -3),
-            likeLabel.centerYAnchor.constraint(equalTo: likeView.centerYAnchor),
-            
-            commentBtn.leadingAnchor.constraint(equalTo: commentView.leadingAnchor),
-            commentBtn.widthAnchor.constraint(equalToConstant: 25),
-            commentBtn.heightAnchor.constraint(equalToConstant: 25),
-            commentBtn.centerYAnchor.constraint(equalTo: commentView.centerYAnchor),
-            
-            commentLabel.leadingAnchor.constraint(equalTo: commentBtn.trailingAnchor,constant: 3),
-            commentLabel.trailingAnchor.constraint(equalTo: commentView.trailingAnchor, constant: -3),
-            commentLabel.centerYAnchor.constraint(equalTo: commentView.centerYAnchor),
-            
-            moreBtn.trailingAnchor.constraint(equalTo: moreView.trailingAnchor),
-            moreBtn.widthAnchor.constraint(equalToConstant: 25),
-            moreBtn.heightAnchor.constraint(equalToConstant: 25),
-            moreBtn.centerYAnchor.constraint(equalTo: moreView.centerYAnchor),
-        ])
+    func getStackkks(vv:UIView,v:UIView) -> UIStackView {
+        return getStack(views: vv,v, spacing: 2, distribution: .fill, axis: .horizontal)
     }
+    
+    
     
     func manageData(){
         guard let data = data else {return}

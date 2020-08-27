@@ -21,7 +21,7 @@ class ProfileViewController: UIViewController {
         cv.showsVerticalScrollIndicator = false
         cv.backgroundColor = .clear
         cv.setCollectionViewLayout(layout, animated: false)
-        cv.register(PostPreviewCollectionViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ProfileHeaderCollectionReusableView")
+        cv.register(ProfileHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ProfileHeaderCollectionReusableView")
         cv.register(PostPreviewCollectionViewCell.self, forCellWithReuseIdentifier: "PostPreviewCollectionViewCell")
         cv.contentInset = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
         cv.delegate = self
@@ -74,7 +74,7 @@ extension ProfileViewController:UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
             case UICollectionView.elementKindSectionHeader:
-                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ProfileHeaderCollectionReusableView", for: indexPath) as! PostPreviewCollectionViewCell
+                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ProfileHeaderCollectionReusableView", for: indexPath) as! ProfileHeaderCollectionReusableView
                 return header
             default:
                 return UICollectionReusableView()
