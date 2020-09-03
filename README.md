@@ -8,7 +8,4 @@ Enjoy!
 # short demo video.
 
 
-
-
-
 ![Alt Text](https://j.gifs.com/2xZm6A.gif)
